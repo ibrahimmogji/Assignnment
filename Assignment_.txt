@@ -1,0 +1,405 @@
+// 1. Display Information
+
+void main() {
+ print("Your Name: ibrahim");
+ print("Your Birth date: March 16, 2003");
+ print("Your Age: 20");
+ print("Your Address: Ahmedabad");
+
+// 2. Square and Cube of a Number
+ int number = 4;
+ int square = number * number;
+ int cube = number * number * number;
+ print("Square of $number: $square");
+ print("Cube of $number: $cube");
+
+// 3. Area of a Circle
+ double radius = 5;
+ double area = 3.14 * radius * radius;
+ print("Area of Circle with radius $radius: $area");
+
+ // 4. Simple Interest
+ double principal = 1000;
+ double rate = 0.05;
+ int time = 2;
+ double interest = principal * rate * time;
+ print("Simple Interest: $interest");
+
+ // 5. Swap Two Numbers without using a third variable
+ int a = 5;
+ int b = 10;
+ print("Before swapping: a = $a, b = $b");
+ a = a + b;
+ b = a - b;
+ a = a - b;
+ print("After swapping: a = $a, b = $b");
+ // 6. Check if a Number is Positive or Negative
+ int num = -7;
+ if (num > 0) {
+ print("The number $num is positive");
+ } else if (num < 0) {
+ print("The number $num is negative");
+ } else {
+ print("The number is zero");
+ }
+ 
+}
+
+
+//7 Check if a Number is Prime
+ int numberToCheckPrime = 17;
+ bool isPrime = true;
+ for (int i = 2; i <= numberToCheckPrime ~/ 2; i++) {
+ if (numberToCheckPrime % i == 0) {
+ isPrime = false;
+ break;
+ }
+ }
+ if (isPrime) {
+ print("$numberToCheckPrime is a prime number");
+ } else {
+ print("$numberToCheckPrime is not a prime number");
+ }
+
+// 8. Find the Maximum Number using Nested If
+ int num1 = 5;
+ int num2 = 10;
+ int num3 = 7;
+ int maxNum;
+ if (num1 > num2) {
+ if (num1 > num3) {
+ maxNum = num1;
+ } else {
+ maxNum = num3;
+ }
+ } else {
+ if (num2 > num3) {
+ maxNum = num2;
+ } else {
+ maxNum = num3;
+ }
+ }
+ print("Maximum Number: $maxNum");
+// 9. Find the Maximum Number using Ternary Operator
+ int a = 15;
+ int b = 12;
+ int c = 18;
+ int max = (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
+ print("Maximum Number: $max");
+
+// program to print 1 to 10
+void main() {
+ for (int i = 1; i <= 10; i++) {
+ print(i);
+ }
+}
+// program to print 51 to 60
+void main() {
+ int i = 51;
+ while (i <= 60) {
+ print(i);
+ i++;
+ }
+}
+// program to print 100 to 81
+void main() {
+ int i = 100;
+ do {
+ print(i);
+ i--;
+ } while (i >= 81);
+}
+
+//program where you have to find the factorial of a given number
+
+import 'dart:io';
+void main() {
+ stdout.write("Enter a number: ");
+ int number = int.parse(stdin.readLineSync()!);
+ int factorial = 1;
+ for (int i = 1; i <= number; i++) {
+ factorial *= i;
+ }
+ print("Factorial of $number: $factorial");
+}
+//program you have to print the Fibonacci series up to user given number
+
+import 'dart:io';
+void main() {
+ stdout.write("Enter the number of terms in the Fibonacci series: ");
+ int terms = int.parse(stdin.readLineSync()!);
+ int a = 0, b = 1;
+ print("Fibonacci Series:");
+ for (int i = 0; i < terms; i++) {
+ print(a);
+ int next = a + b;
+ a = b;
+ b = next;
+ }
+}
+// Dart program to print table of given number
+
+void printTable(int n) {
+ for (int i = 1; i <= 10; i++) {
+ print("${n} x ${i} = ${n * i}");
+ }
+}
+void main() {
+ int n = int.parse(stdin.readLineSync());
+ printTable(n);
+}
+
+// program to print the number in reverse order
+import 'dart:io';
+int reverseNumber(int n) {
+ int rev = 0;
+ while (n != 0) {
+ rev = rev * 10 + n % 10;
+ n = n ~/ 10;
+ }
+ return rev;
+}
+void main() {
+ print("Enter the number:");
+ int n = int.parse(stdin.readLineSync()!);
+ print("The reverse of the number is ${reverseNumber(n)}");
+}
+
+patter 1:
+void main() {
+ int rows = 5;
+ for (int i = 1; i <= rows; i++) {
+ for (int j = 1; j <= rows - i; j++) {
+ print(" ");
+ }
+ for (int k = 1; k <= 2 * i - 1; k++) {
+ print("*");
+ }
+ print("");
+ }
+}
+Pattern 2:
+void main() {
+ int rows = 5;
+ for (int i = 1; i <= rows; i++) {
+ for (int j = 1; j <= i; j++) {
+ print("*");
+ }
+ print("");
+ }
+}
+pattern 3:
+void main() {
+ int rows = 5;
+ for (int i = 1; i <= rows; i++) {
+ for (int j = 1; j <= rows - i; j++) {
+ print(" ");
+ }
+ for (int k = 1; k <= i; k++) {
+ print("*");
+ }
+ print("");
+ }
+}
+pattern 4:
+void main() {
+ int rows = 5;
+ for (int i = 1; i <= rows; i++) {
+ for (int j = 1; j <= rows - i; j++) {
+ print(" ");
+ }
+ for (int k = 1; k <= i; k++) {
+ print("$k ");
+ }
+ print("");
+ }
+}
+pattern 5:
+void main() {
+ int rows = 5;
+ for (int i = 1; i <= rows; i++) {
+ for (int j = 1; j <= rows - i; j++) {
+ print(" ");
+ }
+ for (int k = 1; k <= i; k++) {
+ print("$i ");
+ }
+ print("");
+ }
+}
+pattern 6:
+void main() {
+ int rows = 5;
+ int number = 1;
+ for (int i = 1; i <= rows; i++) {
+ for (int j = 1; j <= i; j++) {
+ print("${number * number} ");
+ }
+ number++;
+ print("");
+ }
+}
+pattern 7:
+void main() {
+ int rows = 5;
+ int number = 1;
+ for (int i = 1; i <= rows; i++) {
+ for (int j = 1; j <= i; j++) {
+ print("$number ");
+ number++;
+ }
+ print("");
+ }
+}
+pattern 8:
+void main() {
+ int rows = 5;
+ bool value = true;
+ 
+ for (int i = 1; i <= rows; i++) {
+ for (int j = 1; j <= i; j++) {
+ print(value ? "1 " : "0 ");
+ value = !value;
+ }
+ print("");
+ }
+}
+pattern 9:
+void main() {
+ 
+ for (int i = 1; i <= 5; i++) {
+ for (int j = 1; j <= i; j++) {
+ print("$j");
+ }
+ print("");
+ }
+}
+pattern 10:
+void main() {
+ int rows = 5;
+ 
+ for (int i = 1; i <= rows; i++) {
+ for (int j = 1; j <= rows - i; j++) {
+ print(" ");
+ }
+ for (int k = i; k >= 1; k--) {
+ print("$k");
+ }
+ print("");
+ }
+}
+pattern 11:
+void main() {
+ int rows = 5;
+ for (int i = 1; i <= rows; i++) {
+ for (int j = 1; j <= i; j++) {
+ print("$i");
+ }
+ print("");
+ }
+}
+
+//Which inheritance is not supported by Dart?
+
+ans.Dart does not support multiple inheritance, which means a class cannot inherit from multiple parent classes simultaneously.
+
+
+//Difference between inheritance and encapsulation.
+
+ans.Inheritance and encapsulation are two fundamental concepts in object-oriented programming.
+
+Inheritance is a mechanism where one class inherits the properties and behaviors (methods) of another class. It allows the derived class (subclass) to reuse and extend the functionality of the base class (superclass). Inheritance establishes an "is-a" relationship between classes, where the subclass is a specialized version of the superclass.
+
+Encapsulation, on the other hand, is a concept that focuses on hiding the internal implementation details of a class and exposing only the necessary interfaces or methods to interact with the class. It aims to achieve data abstraction and data protection by encapsulating data and methods within a class. Encapsulation establishes an "has-a" relationship, where an object has certain properties and behaviors encapsulated within it.
+
+//Difference between inheritance and polymorphism
+
+ans.Inheritance and polymorphism are related concepts in object-oriented programming.
+Inheritance, as mentioned earlier, is a mechanism where a class can inherit properties and behaviors from another class. It allows code reuse and establishes an "is-a" relationship between classes.
+
+Polymorphism refers to the ability of objects of different classes to be treated as objects of a common superclass. It allows a single interface to be used for objects of different types, enabling code to be written that can work with objects of various classes without needing to know their specific types. Polymorphism allows for more flexible and extensible code.
+
+//How do you implement multiple inheritance in Dart?
+
+ans.Dart does not support multiple inheritance directly. However, you can achieve a form of multiple inheritance in Dart by using interfaces (abstract classes). Dart allows a class to implement multiple interfaces, which can provide similar functionality to multiple inheritance. By implementing multiple interfaces, a class can inherit and implement the methods defined in those interfaces.
+
+// Create a program using List
+
+ans.void main() {
+  List<int> numbers = [1, 2, 3, 4, 5];
+  print(numbers);
+}
+
+// add 5 elements from user and store it in list
+
+ans.Here's a program that accepts five elements from the user and stores them in a List:
+
+import 'dart:io';
+
+void main() {
+  List<int> numbers = [];
+  
+  for (int i = 0; i < 5; i++) {
+    stdout.write('Enter a number: ');
+    int input = int.parse(stdin.readLineSync()!);
+    numbers.add(input);
+  }
+  
+  print('Numbers: $numbers');
+}
+
+
+//accept name from user and check is it available in list or not if
+available then remove that element
+
+ans.import 'dart:io';
+
+void main() {
+  List<String> names = ['Raman', 'Mukesh', 'abbas', 'David', 'Harmanpreet'];
+  
+  stdout.write('Enter a name: ');
+  String input = stdin.readLineSync()!;
+  
+  if (names.contains(input)) {
+    names.remove(input);
+    print('$input removed from the list.');
+  } else {
+    print('$input not found in the list.');
+  }
+  
+  print('Updated names: $names');
+}
+
+// How do you restrict a member of a class from inheriting by its
+subclasses?
+
+ans.In Dart, you can restrict a member of a class from being inherited by its subclasses by using the final keyword. When a member (field or method) is marked as final, it cannot be overridden or modified by any subclasses.
+
+// Create a program using Map
+
+ans.void main() {
+  Map<String, int> ages = {
+    'Alice': 25,
+    'Bob': 30,
+    'Charlie': 35,
+  };
+  
+  print(ages);
+}
+
+//create nested maps practical.
+
+ans.void main() {
+  Map<String, dynamic> person = {
+    'name': 'ali',
+    'age': 20,
+    'address': {
+      'street': '12/b ',
+      'city': 'Ahmedabad',
+      'country': 'India',
+    },
+  };
+  
+  print(person);
+}
+
